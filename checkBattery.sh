@@ -8,7 +8,7 @@ source "$config_file"
 
 reminder_percentage=20
 
-battery_percentage=$(ssh $htc_user@$htc_IP -p $htc_port -i $htc_key_file '~/dev/BatteryStatus/batteryPercentage.sh' | sed 's/%//')
+battery_percentage=$(ssh -F $HOME/.ssh/config htc '~/dev/BatteryStatus/batteryPercentage.sh' | sed 's/%//')
 
 current_time=$(date '+%Y-%m-%d %H:%M:%S')
 
